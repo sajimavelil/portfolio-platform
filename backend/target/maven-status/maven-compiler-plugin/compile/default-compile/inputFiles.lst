@@ -1,8 +1,17 @@
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/PortfolioCmsApplication.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/config/BootstrapAdminProperties.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/config/SecurityBeansConfig.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/config/SecurityConfiguration.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/config/SecurityProperties.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/dto/ApiMessageResponse.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/dto/request/LoginRequest.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/dto/request/RefreshTokenRequest.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/dto/response/LoginResponse.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/jwt/JwtService.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/security/CustomUserDetails.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/service/AdminBootstrapService.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/service/PasswordManager.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/auth/service/UserAuthenticationService.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/common/bootstrap/DatabaseInitializer.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/common/bootstrap/RoleBootstrapService.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfolio/common/config/CorsConfig.java

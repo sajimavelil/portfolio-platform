@@ -8,7 +8,6 @@ import com.sajijoseph.portfolio.user.entity.User;
 import com.sajijoseph.portfolio.user.entity.UserRole;
 import com.sajijoseph.portfolio.user.repository.UserRepository;
 import com.sajijoseph.portfolio.user.repository.UserRoleRepository;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,26 +16,26 @@ public class AdminBootstrapService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final UserRoleRepository userRoleRepository;
-    private final PasswordEncoder passwordEncoder;
+    private final PasswordManager passwordManager;
     private final BootstrapAdminProperties adminProperties;
 
     public AdminBootstrapService(
             UserRepository userRepository,
             RoleRepository roleRepository,
             UserRoleRepository userRoleRepository,
-            PasswordEncoder passwordEncoder,
+            PasswordManager passwordManager,
             BootstrapAdminProperties adminProperties) {
 
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.userRoleRepository = userRoleRepository;
-        this.passwordEncoder = passwordEncoder;
+        this.passwordManager = passwordManager;
         this.adminProperties = adminProperties;
     }
 
     public void bootstrapAdmin() {
 
-        if (userRepository.existsByEmail(adminProperties.getEmail())) {
+        if (userRepository.existsByEmailIgnoreCase(adminProperties.getEmail())) {
             System.out.println("Bootstrap administrator already exists.");
             return;
         }
@@ -48,7 +47,7 @@ public class AdminBootstrapService {
         user.setEmail(adminProperties.getEmail());
 
         user.setPassword(
-                passwordEncoder.encode(adminProperties.getPassword())
+                passwordManager.encode(adminProperties.getPassword())
         );
 
         user.setEmailVerified(true);
