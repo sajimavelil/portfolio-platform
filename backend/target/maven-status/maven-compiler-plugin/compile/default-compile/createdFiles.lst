@@ -1,9 +1,11 @@
 com/sajijoseph/portfolio/common/validation/ValidationGroups.class
 com/sajijoseph/portfoliocms/PortfolioCmsApplication.class
+META-INF/spring-configuration-metadata.json
 com/sajijoseph/portfolio/common/constants/AppConstants.class
 com/sajijoseph/portfolio/common/exception/ResourceNotFoundException.class
 com/sajijoseph/portfolio/common/mapper/BaseMapper.class
 com/sajijoseph/portfolio/common/config/CorsConfig.class
+com/sajijoseph/portfolio/auth/config/SecurityProperties.class
 com/sajijoseph/portfolio/common/response/ErrorResponse.class
 com/sajijoseph/portfolio/common/validation/ValidationGroups$Create.class
 com/sajijoseph/portfolio/common/entity/BaseEntity.class

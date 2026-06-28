@@ -1,4 +1,5 @@
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/PortfolioCmsApplication.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/auth/config/SecurityProperties.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/config/CorsConfig.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/config/JpaAuditConfig.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/config/OpenApiConfig.java

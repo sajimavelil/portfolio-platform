@@ -17,3 +17,9 @@ server:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
+app:
+  security:
+    jwt-secret: ChangeThisToAReallyLongRandomSecretKeyOfAtLeast32Characters
+    jwt-expiration: 3600000
+    refresh-expiration: 604800000
