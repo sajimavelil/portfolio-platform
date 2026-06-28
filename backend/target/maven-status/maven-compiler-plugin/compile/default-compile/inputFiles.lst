@@ -1,9 +1,14 @@
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/PortfolioCmsApplication.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/config/CorsConfig.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/config/JpaAuditConfig.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/config/OpenApiConfig.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/constants/AppConstants.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/entity/BaseEntity.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/exception/ApplicationException.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/exception/DuplicateResourceException.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/exception/GlobalExceptionHandler.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/exception/ResourceNotFoundException.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/mapper/BaseMapper.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/response/ApiResponse.java
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/response/ErrorResponse.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/validation/ValidationGroups.java
