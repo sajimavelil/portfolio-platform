@@ -1,0 +1,37 @@
+### JetBrains IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/resources/
+!**/src/test/resources/
+.env
+
+### Build Tools (Maven & Gradle) ###
+target/
+build/
+.gradle/
+bin/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+local.properties
+
+### Log files ###
+*.log
+logs/
+uploads/
+
+### OS files ###
+.DS_Store
+Thumbs.db
+
+### Crash dumps ###
+*.prof
+*.hprof
+
+### Help / Documentation outputs ###
+.asciidoctor/
