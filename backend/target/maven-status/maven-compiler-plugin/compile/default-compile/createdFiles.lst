@@ -1,1 +1,3 @@
 com/sajijoseph/portfoliocms/PortfolioCmsApplication.class
+com/sajijoseph/portfolio/common/entity/BaseEntity.class
+com/sajijoseph/portfolio/common/config/JpaAuditConfig.class

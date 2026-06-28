@@ -1,1 +1,3 @@
 /home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/PortfolioCmsApplication.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/config/JpaAuditConfig.java
+/home/sajij/INFOSPICA/code/IntelliJ/portfolio-platform/backend/src/main/java/com/sajijoseph/portfoliocms/common/entity/BaseEntity.java
