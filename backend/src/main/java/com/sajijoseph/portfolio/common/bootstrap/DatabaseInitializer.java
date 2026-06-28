@@ -1,44 +1,33 @@
 package com.sajijoseph.portfolio.common.bootstrap;
 
-import com.sajijoseph.portfolio.role.entity.Role;
-import com.sajijoseph.portfolio.role.entity.RoleType;
-import com.sajijoseph.portfolio.role.repository.RoleRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import com.sajijoseph.portfolio.auth.service.AdminBootstrapService;
 
 @Component
 public class DatabaseInitializer implements CommandLineRunner {
 
-    private final RoleRepository roleRepository;
+    private final RoleBootstrapService roleBootstrapService;
+    private final AdminBootstrapService adminBootstrapService;
 
-    public DatabaseInitializer(RoleRepository roleRepository) {
-        this.roleRepository = roleRepository;
+    public DatabaseInitializer(
+            RoleBootstrapService roleBootstrapService,
+            AdminBootstrapService adminBootstrapService) {
+
+        this.roleBootstrapService = roleBootstrapService;
+        this.adminBootstrapService = adminBootstrapService;
     }
 
     @Override
     public void run(String... args) {
 
-        createRole(RoleType.ROLE_SUPER_ADMIN);
-        createRole(RoleType.ROLE_ADMIN);
-        createRole(RoleType.ROLE_EDITOR);
+        roleBootstrapService.initializeRoles();
 
-    }
+        adminBootstrapService.bootstrapAdmin();
 
-    private void createRole(RoleType roleType) {
-
-        if (!roleRepository.existsByName(roleType)) {
-
-            Role role = new Role();
-
-            role.setName(roleType);
-
-            role.setDescription(roleType.name());
-
-            roleRepository.save(role);
-
-            System.out.println("Created role : " + roleType);
-
-        }
+        System.out.println("------------------------------------");
+        System.out.println("Database bootstrap completed.");
+        System.out.println("------------------------------------");
 
     }
 

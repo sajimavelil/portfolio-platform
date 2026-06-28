@@ -6,6 +6,9 @@ com/sajijoseph/portfolio/common/validation/ValidationGroups$Create.class
 com/sajijoseph/portfolio/common/response/ApiResponse.class
 com/sajijoseph/portfolio/common/config/OpenApiConfig.class
 com/sajijoseph/portfolio/PortfolioCmsApplication.class
+com/sajijoseph/portfolio/auth/service/AdminBootstrapService.class
+com/sajijoseph/portfolio/auth/config/BootstrapAdminProperties.class
+com/sajijoseph/portfolio/common/bootstrap/RoleBootstrapService.class
 com/sajijoseph/portfolio/common/bootstrap/DatabaseInitializer.class
 com/sajijoseph/portfolio/role/entity/Role.class
 META-INF/spring-configuration-metadata.json

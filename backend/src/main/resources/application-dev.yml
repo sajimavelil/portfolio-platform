@@ -23,3 +23,10 @@ app:
     jwt-secret: ChangeThisToAReallyLongRandomSecretKeyOfAtLeast32Characters
     jwt-expiration: 3600000
     refresh-expiration: 604800000
+
+  bootstrap:
+    admin:
+      first-name: Saji
+      last-name: Joseph
+      email: admin@portfolio.local
+      password: Admin@123456
