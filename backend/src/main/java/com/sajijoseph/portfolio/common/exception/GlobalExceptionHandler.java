@@ -1,67 +1,76 @@
 package com.sajijoseph.portfolio.common.exception;
 
-import com.sajijoseph.portfolio.common.response.ErrorResponse;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import com.sajijoseph.portfolio.common.response.ApiResponse;
+import com.sajijoseph.portfolio.common.response.ApiResponseBuilder;
+import com.sajijoseph.portfolio.common.response.ApiValidationError;
+import java.util.List;
 import java.time.LocalDateTime;
-import java.util.Collections;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleNotFound(
-            ResourceNotFoundException ex,
-            HttpServletRequest request) {
+    public ResponseEntity<ApiResponse<Void>> handleNotFound(
+            ResourceNotFoundException ex) {
 
-        ErrorResponse response = ErrorResponse.builder()
-                .timestamp(LocalDateTime.now())
-                .status(HttpStatus.NOT_FOUND.value())
-                .error(HttpStatus.NOT_FOUND.getReasonPhrase())
-                .message(ex.getMessage())
-                .path(request.getRequestURI())
-                .details(Collections.emptyList())
-                .build();
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(ApiResponseBuilder.failure(ex.getMessage()));
 
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
     }
 
-    @ExceptionHandler(DuplicateResourceException.class)
-    public ResponseEntity<ErrorResponse> handleDuplicate(
-            DuplicateResourceException ex,
-            HttpServletRequest request) {
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ApiResponse<Void>> handleBadRequest(
+            BadRequestException ex) {
 
-        ErrorResponse response = ErrorResponse.builder()
-                .timestamp(LocalDateTime.now())
-                .status(HttpStatus.CONFLICT.value())
-                .error(HttpStatus.CONFLICT.getReasonPhrase())
-                .message(ex.getMessage())
-                .path(request.getRequestURI())
-                .details(Collections.emptyList())
-                .build();
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(ApiResponseBuilder.failure(ex.getMessage()));
 
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
+    }
+
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<ApiResponse<Void>> handleUnauthorized(
+            UnauthorizedException ex) {
+
+        return ResponseEntity
+                .status(HttpStatus.UNAUTHORIZED)
+                .body(ApiResponseBuilder.failure(ex.getMessage()));
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleGeneric(
-            Exception ex,
-            HttpServletRequest request) {
+    public ResponseEntity<ApiResponse<Void>> handleException(
+            Exception ex) {
 
-        ErrorResponse response = ErrorResponse.builder()
-                .timestamp(LocalDateTime.now())
-                .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
-                .error(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase())
-                .message("Unexpected server error.")
-                .path(request.getRequestURI())
-                .details(Collections.singletonList(ex.getMessage()))
-                .build();
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(ApiResponseBuilder.failure("An unexpected error occurred."));
 
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(response);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ApiResponse<Void>> handleValidation(
+            MethodArgumentNotValidException ex) {
+
+        List<ApiValidationError> errors =
+                ex.getBindingResult()
+                        .getFieldErrors()
+                        .stream()
+                        .map(error -> new ApiValidationError(
+                                error.getField(),
+                                error.getDefaultMessage()))
+                        .toList();
+
+        return ResponseEntity
+                .badRequest()
+                .body(ApiResponseBuilder.validationFailure(
+                        "Validation failed",
+                        errors));
+
     }
 }

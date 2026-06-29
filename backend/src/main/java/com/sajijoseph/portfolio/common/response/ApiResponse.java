@@ -3,13 +3,12 @@ package com.sajijoseph.portfolio.common.response;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
-@Setter
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
 public class ApiResponse<T> {
 
@@ -17,6 +16,11 @@ public class ApiResponse<T> {
 
     private String message;
 
+    @Builder.Default
+    private LocalDateTime timestamp = LocalDateTime.now();
+
     private T data;
+
+    private List<ApiValidationError> errors;
 
 }
